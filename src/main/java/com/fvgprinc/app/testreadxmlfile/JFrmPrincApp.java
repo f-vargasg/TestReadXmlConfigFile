@@ -150,6 +150,7 @@ public class JFrmPrincApp extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
+     * Esto es una prueba
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
