@@ -6,7 +6,6 @@
 package com.fvgprinc.app.testreadxmlfile;
 
 import java.net.URL;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -120,37 +119,38 @@ public class JFrmPrincApp extends javax.swing.JFrame {
     private void jButTest2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButTest2ActionPerformed
         //  com.fvgprinc.app.testreadxmlfile.resources
         String fname = "/com/fvgprinc/app/testreadxmlfile/resources/testFile.xml";
+        String lexeme = "<%lexeme>";
+        String resultado = "Archivo " + lexeme + " encontrado!!!!!";
         //String fname = "com.fvgprinc.app.testreadxmlfile.resources.testFile.xml";
         URL configURL = getClass().getResource(fname);
         if (configURL != null) {
-            System.out.println("Archivo encontrado!!!!!!");
+            resultado = resultado.replaceAll(lexeme, "");
         } else {
-            System.out.println("Archivo NO encontrado!!!!!!");
+            resultado = resultado.replaceAll(lexeme, "NO");
         }
+        jTxtAreaOutput.setText(resultado);
     }//GEN-LAST:event_jButTest2ActionPerformed
 
     private void jButTest3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButTest3ActionPerformed
         String fname = "testFile.xml";
+        String lexeme = "<%lexeme>";
+        String resultado = "Archivo " + lexeme + " encontrado!!!!!";
         fname = "images/Experiment.png";
         //String fname = "com.fvgprinc.app.testreadxmlfile.resources.testFile.xml";
-        String msgs;
         //URL configURL =    getClass().getResource(fname);
         URL configURL = this.getClass().getClassLoader().getResource(fname);
         if (configURL != null) {
-            msgs = "Archivo encontrado!!!!!!";
+            resultado = resultado.replaceAll(lexeme, "");
         } else {
-            msgs = "Archivo NO encontrado !!!!!!!!!";
-
+            resultado = resultado.replaceAll(lexeme, "NO");
         }
-        System.out.println(msgs);
-        jTxtAreaOutput.setText(msgs);
+        jTxtAreaOutput.setText(resultado);
         // JOptionPane.showMessageDialog(null, msgs);
 
     }//GEN-LAST:event_jButTest3ActionPerformed
 
     /**
-     * @param args the command line arguments
-     * Esto es una prueba
+     * @param args the command line arguments Esto es una prueba
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
